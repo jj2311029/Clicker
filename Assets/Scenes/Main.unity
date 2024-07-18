@@ -473,7 +473,7 @@ MonoBehaviour:
   - {fileID: 7543747099347013872, guid: 2c600705ff75b0c49b56ac2e5b82fd33, type: 3}
   damage: 10
   criticalPercent: 31
-  criticalProduct: 40
+  criticalProduct: 1.5
   CurGold: {fileID: 1702839838}
   CurCriticalPercent: {fileID: 593925681}
   CurCriticalProduct: {fileID: 1963400549}
