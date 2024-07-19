@@ -29,14 +29,26 @@ public class Monster : MonoBehaviour
         curHp -= damage;
         animator.SetTrigger("Hit");
         hpBar.ChangeHpBarAmount(curHp/maxHp);
-        if(isDead) {return;}
+        if(isDead) return;
         if (curHp<=0)
         {
             curHp = 0;
             isDead = true;
             animator.SetTrigger("Death");
             GameManager gameManager= FindObjectOfType<GameManager>();
-            gameManager.GetGold(1);
+            if(Name=="red slime")
+            {
+                gameManager.GetGold(5);
+            }
+            else if(Name == "green slime")
+            {
+                gameManager.GetGold(1);
+            }
+            else
+            {
+                gameManager.GetGold(3);
+            }
+            gameManager.ChangeGoldAmount();
             
         }
         Debug.Log("Slime Hit!, Current Hp : " + curHp);
@@ -48,6 +60,4 @@ public class Monster : MonoBehaviour
         }
 
     }
-
-    
 }
